@@ -1,0 +1,19 @@
+# --- IDE Generated files -----------------------
+
+.idea/
+.vscode/
+
+# --- Cypress folders ---------------------------
+
+**/videos/
+**/screenshots/
+**/cucumber-json/
+**/cucumber-report/
+
+# --- Environment variables ---------------------
+
+.env
+
+# --- Dependencies ------------------------------
+
+node_modules
