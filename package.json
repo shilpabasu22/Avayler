@@ -4,28 +4,32 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cypress run",
+    "test:postprocess": "node ./reporter.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cypress/browserify-preprocessor": "^3.0.2",
+    "@badeball/cypress-cucumber-preprocessor": "latest",
     "@testing-library/cypress": "^9.0.0",
-    "cypress-axe": "^1.1.0",
+    "cypress-axe": "^1.2.0",
     "cypress-axe-core": "^2.0.0",
-    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-html-validate": "^5.1.1",
+    "cypress-real-events": "^1.7.1",
     "cypress-xpath": "^2.0.1",
-    "html-validate": "^7.10.1",
+    "html-validate": "^7.11.0",
     "multiple-cucumber-html-reporter": "^3.0.1",
-    "typescript": "^4.9.4",
-    "cypress-real-events": "^1.7.1"
+    "typescript": "^4.9.4"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
-    "cucumberJson": {
-      "generate": true,
-      "outputFolder": "./cypress/cucumber-json"
+    "json": {
+      "enabled": true,
+      "output": "./cypress/cucumber-json/cucumber-report.json"
+    },
+    "html": {
+      "enabled": true,
+      "output": "./report/cucumber-report.html"
     }
   },
   "devDependencies": {
